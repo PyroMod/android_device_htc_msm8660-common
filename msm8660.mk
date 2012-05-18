@@ -98,6 +98,10 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
     device/htc/msm8660-common/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw
 
+# BCM4329 BT Firmware
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd
+
 # Common Qualcomm scripts
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/prebuilt/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
