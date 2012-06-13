@@ -169,15 +169,3 @@ case "$emmc_boot"
     ;;
 esac
 
-# Post-setup services
-case "$target" in
-    "msm8660" | "msm8960")
-        start mpdecision
-    ;;
-esac
-
-case "$target" in
-    "msm8660")
-        start thermald
-    ;;
-esac
