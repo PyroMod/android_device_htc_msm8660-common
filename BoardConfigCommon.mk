@@ -29,8 +29,9 @@ TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+ARCH_ARM_HAVE_ARMV7A := true
+TARGET_GLOBAL_CFLAGS += -O3 -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -fmodulo-sched -fmodulo-sched-allow-regmoves
+TARGET_GLOBAL_CPPFLAGS += -O3 -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -fmodulo-sched -fmodulo-sched-allow-regmoves
 COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE -DNO_QCOM_MVS
 
 # Scorpion optimizations
