@@ -74,8 +74,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
-    VisualizationWallpapers \
-    librs_jni
+    VisualizationWallpapers
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
