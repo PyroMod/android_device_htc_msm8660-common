@@ -70,12 +70,6 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     Torch
 
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    VisualizationWallpapers
-
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
