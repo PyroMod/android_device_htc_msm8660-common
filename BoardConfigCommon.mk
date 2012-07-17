@@ -55,8 +55,8 @@ WIFI_DRIVER_MODULE_NAME          := bcmdhd
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
 
 # Audio
-COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
-TARGET_USES_QCOM_LPA := true
+#COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
+#TARGET_USES_QCOM_LPA := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
