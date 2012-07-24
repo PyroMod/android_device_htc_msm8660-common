@@ -31,7 +31,10 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE -DNO_QCOM_MVS
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE -DNO_QCOM_MVS -DQCOM_ICS_COMPAT
+
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
 
 # Wifi related defines
 WIFI_BAND                        := 802_11_ABG
@@ -52,14 +55,21 @@ WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
 #COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
 #TARGET_USES_QCOM_LPA := true
 
-COMMON_GLOBAL_CFLAGS += -DQCOM_ICS_COMPAT
-
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
+# Camera
+BOARD_HAVE_HTC_FFC := true
+
+# Filesystem
+BOARD_VOLD_MAX_PARTITIONS := 36
+
+# FM Radio
+#BOARD_HAVE_FM_RADIO := true
+#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+
+# GPS
 BOARD_USES_QCOM_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
@@ -72,14 +82,18 @@ TARGET_QCOM_HDMI_OUT := true
 TARGET_QCOM_HDMI_RESOLUTION_AUTO := true
 BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 
-BOARD_HAVE_HTC_FFC := true
-
-# Filesystem
-BOARD_VOLD_MAX_PARTITIONS := 36
-
-# FM Radio
-#BOARD_HAVE_FM_RADIO := true
-#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+# Wifi related defines
+WIFI_BAND                        := 802_11_ABG
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE                := bcmdhd
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P          := "/vendor/firmware/fw_bcmdhd_p2p.bin"
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
 
 # Webkit
 ENABLE_WEBGL := true
@@ -91,3 +105,4 @@ TARGET_BOOTANIMATION_PRELOAD := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/htc/msm8660
+
