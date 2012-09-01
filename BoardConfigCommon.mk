@@ -76,7 +76,9 @@ TARGET_QCOM_HDMI_OUT := true
 TARGET_QCOM_HDMI_RESOLUTION_AUTO := true
 BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 
+# Camera
 BOARD_HAVE_HTC_FFC := true
+COMMON_GLOBAL_CFLAGS += -DNO_UPDATE_PREVIEW
 
 # Filesystem
 BOARD_VOLD_MAX_PARTITIONS := 36
