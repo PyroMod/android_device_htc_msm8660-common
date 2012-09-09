@@ -49,15 +49,16 @@ case "$target" in
 	 chown root.system /sys/devices/system/cpu/cpu1/online
 	 chmod 664 /sys/devices/system/cpu/cpu1/online
          mount -t debugfs none /sys/kernel/debug
+         echo "10" > /proc/sys/vm/swappiness
+	 echo "2048" > /sys/block/mmcblk0/bdi/read_ahead_kb
+	 echo "2048" > /sys/block/mmcblk1/bdi/read_ahead_kb
+	 echo "2048" > /sys/devices/virtual/bdi/179:0/read_ahead_kb
 	 echo "0,1,2,4,6,15" > /sys/module/lowmemorykiller/parameters/adj
 	 echo 1 > /sys/module/lowmemorykiller/parameters/check_filepages
 	 echo 32 > /sys/module/lowmemorykiller/parameters/cost
 	 echo 2 > /sys/module/lowmemorykiller/parameters/debug_level
 	 echo "3584,4096,8192,10240,11264,12288" > /sys/module/lowmemorykiller/parameters/minfile
 	 echo "1536,3072,44800,51200,64000,76800" > /sys/module/lowmemorykiller/parameters/minfree
-	 echo "2048" > /sys/block/mmcblk0/bdi/read_ahead_kb
-	 echo "2048" > /sys/block/mmcblk1/bdi/read_ahead_kb
-	 echo "2048" > /sys/devices/virtual/bdi/179:0/read_ahead_kb
         ;;
 esac
 
