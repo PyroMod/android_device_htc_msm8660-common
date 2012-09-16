@@ -49,6 +49,7 @@ case "$target" in
 	 chown root.system /sys/devices/system/cpu/cpu1/online
 	 chmod 664 /sys/devices/system/cpu/cpu1/online
          mount -t debugfs none /sys/kernel/debug
+         echo "4096" > /proc/sys/vm/min_free_kbytes
          echo "10" > /proc/sys/vm/swappiness
 	 echo "2048" > /sys/block/mmcblk0/bdi/read_ahead_kb
 	 echo "2048" > /sys/block/mmcblk1/bdi/read_ahead_kb
