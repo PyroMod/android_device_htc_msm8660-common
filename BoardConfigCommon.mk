@@ -73,7 +73,6 @@ TARGET_HAVE_BYPASS := false
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_OVERLAY := true
 TARGET_QCOM_HDMI_OUT := true
-TARGET_QCOM_HDMI_RESOLUTION_AUTO := true
 BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 
 # Camera
