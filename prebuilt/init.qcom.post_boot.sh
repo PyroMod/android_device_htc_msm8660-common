@@ -65,4 +65,3 @@ case "$emmc_boot"
         chown system /sys/devices/platform/rs300100a7.65536/sync_sts
     ;;
 esac
-
